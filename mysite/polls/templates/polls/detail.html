@@ -1,0 +1,18 @@
+<h1>{{  question  }}</h1>
+{% if error_message %}
+    <p><stong>{{error_message}}</stong></p>
+{% endif %}
+<form action = "/polls/{{num}}/vote" method = "post">
+    <input type = "submit">
+    {% csrf_token %}
+    <ul>
+        {% for c in choice %}
+            <li>
+                <input type = 'radio'
+                       name = 'select'
+                value = "{{ c.id }}">
+                {{ c.choice_text }}
+            </li>
+        {% endfor %}
+    </ul>
+</form>

@@ -1,0 +1,11 @@
+
+<form action = "/polls/{{q.id}}/save"
+      method="post">
+    {% csrf_token %}
+질문 :
+<input type = "text" name = "address"
+       value = "{{address.address}}">
+<input type = "submit">
+<br>
+{{q.question_text}}
+</form>
